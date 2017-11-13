@@ -1,7 +1,14 @@
 <h1>Class <%= @batch.number %> </h1>
 
-<ol>
+<div class="container-students">
+
   <% @batch.students.each do |student|%>
-  <li><%= student.name %> </li>
-  <%end%>
-</ol>
+<div class="container-item-students">
+    <div class="container-content-students">
+          <h1><%= student.name %> </h1>
+          <p>student id: <%= student.id%></p>
+
+    </div>
+  </div>
+    <%end%>
+</div>
