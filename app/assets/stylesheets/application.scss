@@ -8,10 +8,15 @@ font-family: 'Roboto Mono', monospace;
 color: #ffffff;
 }
 
-
+h2 {
+  text-decoration: underline;
+  text-decoration-color: red;
+}
 .btn-primary{
   background-color: #d32f2f;
   border-color:#d32f2f;
+  display: inline-block;
+  height: 3em;
 }
 
 .navbar-static-top {
@@ -25,4 +30,27 @@ color: #ffffff;
 
 .navbar-brand {
   color: #ffffff;
+}
+
+.container-batches{
+  display: flex;
+  border: 5px solid white;
+  width: 1000px;
+
+}
+.container-item-batches {
+  width: 50%;
+  height: 15em;
+  border: 5px solid white;
+  display: flex;
+  flex-grow:1;
+  flex-wrap: wrap;
+  display: flex;
+  flex-direction: column;
+  justify-content: space-around;
+
+}
+.container-content-batches {
+  text-align: center;
+
 }
