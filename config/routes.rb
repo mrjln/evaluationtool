@@ -3,6 +3,6 @@ Rails.application.routes.draw do
   devise_for :users
 
   resources :batches, only: [:index, :show] do
-    resources :students, only: [:index]
+    resources :students, only: [:index, :show]
   end
 end
