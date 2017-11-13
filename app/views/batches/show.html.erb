@@ -1,11 +1,11 @@
-<h1>Class <%= @batch.number %> </h1>
+<h2>Class <%= @batch.number %> </h2>
 
 <div class="container-students">
 
   <% @batch.students.each do |student|%>
 <div class="container-item-students">
     <div class="container-content-students">
-          <h1><%= student.name %> </h1>
+          <h1><%=link_to student.name, "/batches/ #{@batch.id}/students/#{student.id}" %> </h1>
           <p>student id: <%= student.id%></p>
 
     </div>
