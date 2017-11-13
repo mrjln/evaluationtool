@@ -40,7 +40,9 @@ gem 'jbuilder', '~> 2.5'
 # Use Capistrano for deployment
 # gem 'capistrano-rails', group: :development
 
+#handle images
 gem 'carrierwave', '0.11.2'
+gem 'cloudinary', '1.2.3'
 
 
 group :development, :test do
