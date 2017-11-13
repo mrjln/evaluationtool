@@ -1,2 +1,28 @@
 @import "bootstrap-sprockets";
 @import "bootstrap";
+
+
+body {
+background-image: linear-gradient(to right, #F1EAE9 0%, #F0AAA0 19%, #fd868c 60%, #d32f2f 100%);
+font-family: 'Roboto Mono', monospace;
+color: #ffffff;
+}
+
+
+.btn-primary{
+  background-color: #d32f2f;
+  border-color:#d32f2f;
+}
+
+.navbar-static-top {
+  background-color: #d32f2f;
+}
+
+.navbar-title {
+  color: #ffffff;
+
+}
+
+.navbar-brand {
+  color: #ffffff;
+}
