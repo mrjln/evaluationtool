@@ -43,7 +43,6 @@ yellow_evaluation_student2= Evaluation.create!({
   student: student2
   })
 
-
 green_evaluation_student3= Evaluation.create!({
   evaluation_date: Date.parse("2017-11-14"),
   color: "green",
