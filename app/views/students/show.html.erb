@@ -1,13 +1,25 @@
-<h2> <%= @student.name %></h2>
-<div class="container-student">
-<div class="container-item-student">
-    <div class="container-content-student">
+
+  <a href="/batches/<%=@batch.id %>" <h3> Back to Class</h3> </a>
+<div class="container-indivudual-student">
+
+
+<div class="container-item-individual-student">
+  <h2> <%= @student.name %></h2>
+      <% @student.evaluations.each do |evaluation| %>
+      <p> current status: <div class="eval <%= evaluation.color %>"> </div>  </p>
+      <br>
+      <p> last evaluation <%=evaluation.evaluation_date%> </p>
+      <% end%>
+
+    <% @student.photos.each  do |photo| %>
+      <%=image_tag photo.image.thumbnail %>
+        <% end %>
+    </div>
+    <div class="container-item-individual-student">
       <p> Student id <%= @student.id %>  </p>
           <p> Class number #<%= @student.batch.number %>  </p>
-
           <p>placholder for form</p>
 
-    </div>
   </div>
 
 </div>

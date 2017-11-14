@@ -1,0 +1,9 @@
+
+  <p>Student to ask question</p>
+    <%= @selected_student.name %>
+    <% @selected_student.photos.each do |photo| %>
+    <%= image_tag photo.image.thumbnail %>
+    <% end %>
+
+    <div class= "eval <%=@selected_student.evaluations.last.color%>">
+    </div>
