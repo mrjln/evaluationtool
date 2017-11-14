@@ -1,12 +1,12 @@
-<h2>Classes of Codaisseur </h2>
+<h2>Classes of Codaisseur </h2> <a href="/batches"> <h3> Back to Classes </h3> </a>
 
 <div class="container-evalution">
-
     <% @batches.each do |batch| %>
   <div class="container-item-evaluation">
     <div class="container-content-evaluation">
       <h1>Batch <%=  batch.number %></h1>
-      <button class="btn-primary"> <%= link_to "See Class", batch %></button>
+      <%= link_to '<button class="btn-primary">See Class</button>'.html_safe, batch %>
+
     </div>
   </div>
     <% end %>
