@@ -6,6 +6,10 @@ class BatchesController < ApplicationController
 
   def show
     @batch = Batch.find(params[:id])
+  end
 
+  def update
+    @batch = Batch.find(params[:id])
+    @students = @batch.students
   end
 end
