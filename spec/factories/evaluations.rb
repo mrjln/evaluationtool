@@ -1,6 +1,6 @@
 FactoryGirl.define do
   factory :evaluation do
-    student nil
+    student { build(:student) }
     evaluation_date "2017-11-14"
     color "MyString"
   end
