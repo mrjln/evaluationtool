@@ -17,7 +17,7 @@ class Batch < ApplicationRecord
     students_grouped = self.students_grouped_by_color(color_selector)
 
     random_student = students_grouped.sample
-    return random_student.name
+    return random_student
   end
 
   def students_grouped_by_color(randomcolor)

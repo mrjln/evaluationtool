@@ -1,11 +1,12 @@
 <h2>Class <%= @batch.number %> </h2> <a href="/batches"> <h3> Back to Classes </h3> </a>
 
-<%= button_to 'Ask a question', @batch, class: "btn-primary"%>
+<div class="selected_student">
+<%= render 'batches/selected_student' %>
+</div>
 
-<p>Student to ask question</p><%= @batch.student_to_ask_question%>
-
+</hr>
+</hr>
 <div class="container-students">
-
   <% @batch.students.each do |student|%>
 <div class="container-item-students">
     <div class="container-content-students">

@@ -6,10 +6,11 @@ class BatchesController < ApplicationController
 
   def show
     @batch = Batch.find(params[:id])
+    @selected_student = @batch.student_to_ask_question
   end
 
-  def update
-    @batch = Batch.find(params[:id])
-    @students = @batch.students
+  def show_selected_student
+   render :partial=>"batches/selected_student"
   end
+
 end
