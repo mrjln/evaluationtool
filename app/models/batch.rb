@@ -19,7 +19,7 @@ class Batch < ApplicationRecord
   end
 
   def pick_semi_random_color
-    #50% chance to pick red = 4x , 33% chance to pick yellow = 2x, 17% chance to pick green = 1x
+    #50% chance to pick red = 3x , 33% chance to pick yellow = 2x, 17% chance to pick green = 1x
     chances_colors = ["red","red","red","yellow","yellow","green"]
     color_selector = chances_colors.sample
     return color_selector
