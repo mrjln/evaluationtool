@@ -64,20 +64,20 @@ a {
 
 .container-students{
   display: flex;
-  border: 1px solid white;
   width: 100%;
   flex-wrap: wrap;
-  justify-content: space-around;
+  justify-content: flex-start;
 
 }
 .container-item-students {
-  width: 20em;
+  width: 18em;
   height:25em;
   border: 5px solid white;
   display: flex;
   display: flex;
   flex-direction: column;
   justify-content: space-around;
+  margin: 0.5em;
 
 }
 .container-content-students {
