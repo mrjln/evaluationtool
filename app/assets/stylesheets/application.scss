@@ -44,7 +44,7 @@ a {
 .container-evalution{
   display: flex;
   border: 5px solid white;
-  width: 1000px;
+  width: 100%
 
 }
 .container-item-evaluation {
@@ -74,7 +74,6 @@ a {
 }
 .container-item-students {
   width: 20em;
-
   border: 5px solid white;
   display: flex;
   flex-grow:1;

@@ -9,7 +9,9 @@ marjo = User.create(email: "marjolein@emailadres.com", password: "abcd1234")
 
 
 #seed batches
-batch1 = Batch.create(number: 1)
+batch1 = Batch.create(
+  number: 1,
+  starts_at: Date.parse("2014-1-1"))
 batch2 = Batch.create(number: 2)
 batch3 = Batch.create(number: 3)
 
