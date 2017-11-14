@@ -1,5 +1,7 @@
 <h2>Class <%= @batch.number %> </h2> <a href="/batches"> <h3> Back to Classes </h3> </a>
 
+<%= button_to 'Ask a question', @batch, method: :post, class: "btn-primary"%>
+
 <div class="container-students">
 
   <% @batch.students.each do |student|%>
@@ -11,6 +13,7 @@
           <h1><%=link_to student.name, "/batches/ #{@batch.id}/students/#{student.id}" %> </h1>
 
           <p>student id: <%= student.id%></p>
+          <p> current status: <div class="eval <%= student.evaluations.last.color%>"> </div>  </p>
 
     </div>
   </div>

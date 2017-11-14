@@ -39,8 +39,6 @@ a {
   color: #ffffff;
 }
 
-
-
 .container-evalution{
   display: flex;
   border: 5px solid white;
@@ -103,4 +101,25 @@ a {
   justify-content: space-around;
   padding: 3em;
 
+}
+
+
+.eval {
+  align-self: center;
+  width: 20px;
+  height: 20px;
+  margin: 5px;
+  border: 1px solid white;
+}
+
+.red {
+  background: #EC2A0F  ;
+}
+
+.yellow {
+  background: #F1D72C ;
+}
+
+.green {
+  background: #2FF12C;
 }
