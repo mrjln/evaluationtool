@@ -8,8 +8,8 @@ describe "association with student" do
   let(:student) { create :student }
 
   it "evaluation belongs to a student" do
-    photo = student.photos.build()
+    evaluation = student.evaluations.build()
 
-    expect(photo.student).to eq(student)
+    expect(evaluation.student).to eq(student)
   end
 end

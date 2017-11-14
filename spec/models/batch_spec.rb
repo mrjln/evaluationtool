@@ -15,11 +15,14 @@ describe ".pick_semi_random_color" do
   describe ".return_percentage" do
     let(:batch) {create :batch}
     let(:student1) { create :student, batch: batch }
+    let(:student2) { create :student, batch: batch }
+    let(:student3) { create :student, batch: batch }
+    let(:student4) { create :student, batch: batch }
 
     let(:evaluation) { create :evaluation, color: "red", student: student1 }
-    let(:evaluation) { create :evaluation, color: "red", student: student1 }
-    let(:evaluation) { create :evaluation, color: "yellow", student: student1 }
-    let(:evaluation) { create :evaluation, color: "green", student: student1 }
+    let(:evaluation) { create :evaluation, color: "red", student: student2 }
+    let(:evaluation) { create :evaluation, color: "yellow", student: student3 }
+    let(:evaluation) { create :evaluation, color: "green", student: student4 }
 
       it "returns percentage of students with the color red, yellow or blue" do
         expect(batch.return_percentage("red")).to eq(50)
