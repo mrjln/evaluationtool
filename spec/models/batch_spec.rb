@@ -25,6 +25,6 @@ describe ".pick_semi_random_color" do
     let(:evaluation) { create :evaluation, color: "green", student: student4 }
 
       it "returns percentage of students with the color red, yellow or blue" do
-        expect(batch.return_percentage("red")).to eq(50)
+        expect(batch.return_percentage("red")).to be_a(integer) 
       end
     end

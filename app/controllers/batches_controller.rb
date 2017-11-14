@@ -7,6 +7,9 @@ class BatchesController < ApplicationController
   def show
     @batch = Batch.find(params[:id])
     @selected_student = @batch.student_to_ask_question
+    @percentage_red = @batch.return_percentage("red")
+    @percentage_yellow = @batch.return_percentage("yellow")
+    @percentage_green = @batch.return_percentage("green")
   end
 
   def show_selected_student

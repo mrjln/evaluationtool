@@ -1,5 +1,11 @@
 <h2>Class <%= @batch.number %> </h2> <a href="/batches"> <h3> Back to Classes </h3> </a>
 
+<div class="evaluation-bar">
+  <div class="evaluation-bar-color red" style= "width:<%=@percentage_red%>%"> <%=@percentage_red%>%</div>
+  <div class="evaluation-bar-color yellow" style= "width:<%=@percentage_yellow%>%"> <%=@percentage_yellow%>%</div>
+<div class="evaluation-bar-color green" style= "width:<%=@percentage_green%>%"> <%=@percentage_green%>%</div>
+</div>
+
 <div class="selected_student">
 <%= render 'batches/selected_student' %>
 </div>
