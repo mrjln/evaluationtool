@@ -12,16 +12,26 @@ class Batch < ApplicationRecord
     return @array_of_students
   end
 
-  def students_evaluation(string)
-    @filtered_array_of_students = []
+  def student_to_ask_question
+    color_selector = self.pick_semi_random_color
+    students_grouped = self.students_grouped_by_color(color_selector)
 
+    random_student = students_grouped.sample
+    return random_student.name
   end
 
-  def self.pick_semi_random_color
-#50% chance to pick red, 33% chance to pick yellow, 17% chance to pick green
+  def students_grouped_by_color(randomcolor)
+    students_grouped = []
+      self.students.each do |student|
+          students_grouped << student if student.evaluations.last.color == randomcolor
+      end
+      return students_grouped
+  end
+
+  def pick_semi_random_color
+    #50% chance to pick red, 33% chance to pick yellow, 17% chance to pick green
     chances_colors = ["red","red","red","yellow","yellow","green"]
     color_selector = chances_colors.sample
     return color_selector
-
   end
 end

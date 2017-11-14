@@ -1,11 +1,8 @@
 <h2>Class <%= @batch.number %> </h2> <a href="/batches"> <h3> Back to Classes </h3> </a>
 
-<%= button_to 'Ask a question', @batch, method: :put, class: "btn-primary"%>
-<p>debugging</p>
+<%= button_to 'Ask a question', @batch, class: "btn-primary"%>
 
-<%= @batch.create_array_of_students %>
-
-
+<p>Student to ask question</p><%= @batch.student_to_ask_question%>
 
 <div class="container-students">
 
