@@ -10,7 +10,7 @@
 #
 # It's strongly recommended that you check this file into your version control system.
 
-ActiveRecord::Schema.define(version: 20171113220549) do
+ActiveRecord::Schema.define(version: 20171114083817) do
 
   # These are extensions that must be enabled in order to support this database
   enable_extension "plpgsql"
@@ -38,9 +38,7 @@ ActiveRecord::Schema.define(version: 20171113220549) do
     t.datetime "created_at", null: false
     t.datetime "updated_at", null: false
     t.bigint "batch_id"
-    t.bigint "photo_id"
     t.index ["batch_id"], name: "index_students_on_batch_id"
-    t.index ["photo_id"], name: "index_students_on_photo_id"
   end
 
   create_table "users", force: :cascade do |t|
@@ -63,5 +61,4 @@ ActiveRecord::Schema.define(version: 20171113220549) do
   add_foreign_key "batches", "students"
   add_foreign_key "photos", "students"
   add_foreign_key "students", "batches"
-  add_foreign_key "students", "photos"
 end
