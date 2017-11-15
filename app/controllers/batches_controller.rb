@@ -16,4 +16,21 @@ class BatchesController < ApplicationController
     @batch = Batch.new
   end
 
+  def create
+    @batch = Batch.new(batch_params)
+
+    if @batch.save
+    @batch.get_start_end_date
+          redirect_to "/batches", notice: 'Batch added'
+      else
+        redirect_to "/batches", notice: 'Somethin went wrong'
+      end
+  end
+
+  private
+
+  def batch_params
+      params.require(:batch).permit(:number, :starts_at)
+    end
+
 end

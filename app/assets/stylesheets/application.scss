@@ -42,27 +42,25 @@ a {
   color: #ffffff;
 }
 
-.container-evalution{
+.container-batches{
   display: flex;
-  border: 5px solid white;
-  width: 100%
-
-}
-.container-item-evaluation {
-  width: 50%;
-  height: 15em;
-  border: 5px solid white;
-  display: flex;
-  flex-grow:1;
+  width: 100%;
   flex-wrap: wrap;
-  display: flex;
-  flex-direction: column;
-  justify-content: space-around;
+  justify-content: flex-start;
 
 }
-.container-content-evaluation {
-  text-align: center;
+.container-item-batches {
+  width: 15em;
+  height:14em;
+  border: 5px solid white;
+  display: flex;
+  flex-direction: column-reverse;
+  justify-content: space-around;
+  margin: 0.5em;
 
+}
+.container-content-batches {
+  text-align: center;
 }
 
 .container-students{
@@ -76,7 +74,6 @@ a {
   width: 18em;
   height:25em;
   border: 5px solid white;
-  display: flex;
   display: flex;
   flex-direction: column;
   justify-content: space-around;
