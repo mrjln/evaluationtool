@@ -1,24 +1,18 @@
 <div class="row">
   <div class="col-md-6 col-md-offset-3 text-center">
-  <%= form_for @batch do |f| %>
+  <%= form_for [@batch, @student] do |f| %>
 
   <div class="form-group">
-  <h4>Batch Number</h4>
-  <%= f.label :number %>:
-  <%= f.text_field :number, class: "form-control", placeholder: "Batch Number" %><br />
+  <h4>Student name</h4>
+  <%= f.label :name%>:
+  <%= f.text_field :name, class: "form-control", placeholder: "Name" %><br />
 </div>
 
-<div class="form-group">
-    <h4>Start Date</h4>
-  <%= f.label :starts_at %>:
-  <%= f.date_field  :starts_at, class: "form-control", placeholder: Date.today %><br />
-
-  </div>
-
-    <%= f.submit "Create Class", class: "btn btn-primary" %>
-    <a href="/batches"><button class="btn-primary">Back to Batches</button></a>
-
+    <%= f.submit "Create Student", class: "btn btn-primary" %>
 <% end %>
+
+<a href="/batches/<%=@batch.id%>"><button class="btn-primary">Back to Class <%=@batch.number %> </button></a>
+
 
 </div>
 </div>
