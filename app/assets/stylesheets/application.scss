@@ -12,6 +12,9 @@ h2 {
   text-decoration: underline;
   text-decoration-color: red;
 }
+p {
+  margin: 0 0 2px;
+}
 h3 {
   text-align: right;
 }
@@ -21,6 +24,8 @@ h4 {
 
 a {
   color: #ffffff;
+  text-decoration: underline;
+  text-decoration-color: red;
 }
 .btn-primary{
   background-color: #d32f2f;
@@ -46,21 +51,23 @@ a {
   display: flex;
   width: 100%;
   flex-wrap: wrap;
-  justify-content: flex-start;
-
+  flex-direction: row;
 }
 .container-item-batches {
-  width: 15em;
+  width: 26em;
   height:14em;
   border: 5px solid white;
-  display: flex;
-  flex-direction: column-reverse;
   justify-content: space-around;
   margin: 0.5em;
+  display: flex;
+  overflow: hidden;
 
 }
 .container-content-batches {
   text-align: center;
+  margin:auto;
+  flex-direction: column;
+
 }
 
 .container-students{
@@ -68,16 +75,18 @@ a {
   width: 100%;
   flex-wrap: wrap;
   justify-content: flex-start;
-
 }
+
 .container-item-students {
-  width: 18em;
+  width: 25em;
   height:25em;
   border: 5px solid white;
   display: flex;
   flex-direction: column;
   justify-content: space-around;
   margin: 0.5em;
+  overflow: hidden;
+  padding: 2em;
 
 }
 .container-content-students {
@@ -88,18 +97,19 @@ a {
 .container-indivudual-student{
   display: flex;
   border: 5px solid white;
-  width: 1000px;
+  width: 100%;
   flex-wrap: wrap;
+  overflow: hidden;
 
 }
 .container-item-individual-student {
-  width: 20em;
   height: 40em;
-  border: 5px solid red;
+  border: 5px solid white;
   flex-grow: 1;
   flex-direction: row;
   justify-content: space-around;
   padding: 3em;
+  overflow: hidden;
 
 }
 .evaluation-bar {
@@ -140,14 +150,15 @@ a {
   display: flex;
   align-content:center;
   justify-content:space-around;
+  margin:auto;
 }
 
 .selected_student {
-  border: 5px solid white;
+  border: 5px solid red;
   margin: 2em;
   padding: 2em;
   width: 30em;
   height: 12em;
   align-self:center;
-
+  overflow: hidden;
 }

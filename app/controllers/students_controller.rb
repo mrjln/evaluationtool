@@ -24,6 +24,12 @@ class StudentsController < ApplicationController
       end
   end
 
+  def destroy
+        @student = @batch.students.find(params[:id])
+        @student.destroy
+        redirect_to @batch, notice: "Student deleted!"
+    end
+
 
   private
 
