@@ -30,11 +30,13 @@ class Batch < ApplicationRecord
 
   def return_percentage(color)
     @totalstudents = self.students.count
-    @group_of_students = self.students_grouped_by_color(color)
-    @amount_of_students_with_color = @group_of_students.count
-    @percentage = ((@amount_of_students_with_color.to_d / @totalstudents.to_d)*100)
-    @integer = @percentage.to_i
-    return @integer
+    @percentage = 0.0
+    if @totalstudents != 0
+        @group_of_students = self.students_grouped_by_color(color)
+        @amount_of_students_with_color = @group_of_students.count
+        @percentage = ((@amount_of_students_with_color.to_f / @totalstudents.to_f)*100)
+    end
+    return @percentage
   end
 
 def get_start_end_date
