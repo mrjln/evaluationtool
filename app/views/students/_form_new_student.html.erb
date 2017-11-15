@@ -1,15 +1,29 @@
 <div class="row">
   <div class="col-md-6 col-md-offset-3 text-center">
-  <%= form_for [@batch, @student] do |f| %>
+  <%= form_for [@batch, @student], html: { multipart: true } do |f| %>
 
   <div class="form-group">
-  <h4>Student name</h4>
-  <%= f.label :name%>:
-  <%= f.text_field :name, class: "form-control", placeholder: "Name" %><br />
+      <h4>Student name</h4>
+      <%= f.label :name%>:
+      <%= f.text_field :name, class: "form-control", placeholder: "Name" %><br />
+  </div>
+
+<label>Photo</label>
+
+<div class="form-group">
+    <span class="btn btn-default">
+        Upload Photos
+<%= file_field_tag "images[]", type: :file, multiple: true %>
+</span>
+</div>
+<div id="photos">
+  <%= render 'photos/list' %>
 </div>
 
     <%= f.submit "Create Student", class: "btn btn-primary" %>
 <% end %>
+
+<hr>
 
 <a href="/batches/<%=@batch.id%>"><button class="btn-primary">Back to Class <%=@batch.number %> </button></a>
 
