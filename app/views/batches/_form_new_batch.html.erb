@@ -12,8 +12,12 @@
     <h4>Start Date</h4>
   <%= f.label :starts_at %>:
   <%= f.date_field  :starts_at, class: "form-control", placeholder: Date.today %><br />
-
   </div>
+
+<div class="form-group">
+      <h4>End Date</h4>
+      <p style="color:black">Automatically generated with start date </p>
+</div>
 
     <%= f.submit "Create Class", class: "btn btn-primary" %>
     <a href="/batches"><button class="btn-primary">Back to Batches</button></a>
