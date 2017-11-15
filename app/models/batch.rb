@@ -1,6 +1,9 @@
 class Batch < ApplicationRecord
   has_many :students
 
+  validates :number, presence: true
+  validates :starts_at, presence: true
+
 
   def student_to_ask_question
     color_selector = self.pick_semi_random_color
