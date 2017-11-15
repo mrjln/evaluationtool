@@ -118,6 +118,7 @@ red_evaluation_student10= Evaluation.create!({
     class2_student = Student.create!({
       name: Faker::LordOfTheRings.character,
       batch: batch2,
+      evaluations:[],
       })
     photo2 = Photo.create(remote_image_url: "http://res.cloudinary.com/du3yzngfr/image/upload/v1508429095/yjrtzit5oii8jlhjh4wq.jpg", student: class2_student)
   end
@@ -126,6 +127,7 @@ red_evaluation_student10= Evaluation.create!({
      class3_student = Student.create!({
        name: Faker::Pokemon.name,
        batch: batch3,
+       evaluations: [],
        })
      photo3 = Photo.create(remote_image_url: "http://res.cloudinary.com/du3yzngfr/image/upload/v1508427883/elf_cz311r.png", student: class3_student)
    end

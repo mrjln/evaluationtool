@@ -5,19 +5,27 @@ class Batch < ApplicationRecord
 
 
   def student_to_ask_question
-    color_selector = self.pick_semi_random_color
-    students_grouped = self.students_grouped_by_color(color_selector)
+    @totalstudents = self.students.count
+    random_student = nil
+    if @totalstudents != 0
+        color_selector = self.pick_semi_random_color
+        students_grouped = self.students_grouped_by_color(color_selector)
 
-    random_student = students_grouped.sample
+        random_student = students_grouped.sample
+      end
     return random_student
   end
 
   def students_grouped_by_color(randomcolor)
-    students_grouped = []
-      self.students.each do |student|
-          students_grouped << student if student.evaluations.last.color == randomcolor
-      end
-      return students_grouped
+    @totalstudents = self.students.count
+    if @totalstudents != 0
+        students_grouped = []
+          self.students.each do |student|
+            break if student.evaluations.empty?
+              students_grouped << student if student.evaluations.last.color == randomcolor
+          end
+    end
+    return students_grouped
   end
 
   def pick_semi_random_color
