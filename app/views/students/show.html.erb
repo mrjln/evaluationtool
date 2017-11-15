@@ -4,6 +4,8 @@
 
 
 <div class="container-item-individual-student">
+  <h4>Student Info </h4>
+  <hr>
     <% @student.photos.each  do |photo| %>
     <%=image_tag photo.image.thumbnail %>
         <% end %>
@@ -16,9 +18,12 @@
 
       <p> Student id <%= @student.id %>  </p>
       <p> Class number #<%= @student.batch.number %>  </p>
+      <%= link_to "Update student info", edit_batch_student_url(@batch, @student) %>
 
     </div>
     <div class="container-item-individual-student">
+      <h4>Student status </h4>
+      <hr>
 
           <%= render "evaluations/form_new_eval" %>
 
