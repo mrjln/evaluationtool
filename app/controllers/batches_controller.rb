@@ -12,8 +12,26 @@ class BatchesController < ApplicationController
     @percentage_green = @batch.return_percentage("green")
   end
 
-  def show_selected_student
-   render :partial=>"batches/selected_student"
+  def new
+    @batch = Batch.new
   end
+
+  def create
+    @batch = Batch.new(batch_params)
+    @batch.get_start_end_date
+
+    if @batch.save
+
+          redirect_to "/batches", notice: 'Batch added'
+      else
+        redirect_to "/batches", notice: 'Somethin went wrong'
+      end
+  end
+
+  private
+
+  def batch_params
+      params.require(:batch).permit(:number, :starts_at)
+    end
 
 end

@@ -13,9 +13,14 @@ marjo = User.create(email: "marjolein@emailadres.com", password: "abcd1234")
 #seed batches
 batch1 = Batch.create(
   number: 1,
-  starts_at: Date.parse("2014-1-1"))
-batch2 = Batch.create(number: 2)
-batch3 = Batch.create(number: 3)
+  starts_at: Date.parse("2017-5-7").beginning_of_week,
+  ends_at: Date.parse("2017-5-7").beginning_of_week + 5.days + 9.weeks)
+batch2 = Batch.create(number: 2,
+  starts_at: Date.parse("2017-8-7").beginning_of_week,
+  ends_at: Date.parse("2017-8-7").beginning_of_week + 5.days + 9.weeks)
+batch3 = Batch.create(number: 3,
+  starts_at: Date.parse("2017-8-7").beginning_of_week,
+  ends_at: Date.parse("2017-8-7").beginning_of_week + 5.days + 9.weeks)
 
 
 #class to test evaluations on
@@ -113,6 +118,7 @@ red_evaluation_student10= Evaluation.create!({
     class2_student = Student.create!({
       name: Faker::LordOfTheRings.character,
       batch: batch2,
+      evaluations:[],
       })
     photo2 = Photo.create(remote_image_url: "http://res.cloudinary.com/du3yzngfr/image/upload/v1508429095/yjrtzit5oii8jlhjh4wq.jpg", student: class2_student)
   end
@@ -121,6 +127,7 @@ red_evaluation_student10= Evaluation.create!({
      class3_student = Student.create!({
        name: Faker::Pokemon.name,
        batch: batch3,
+       evaluations: [],
        })
      photo3 = Photo.create(remote_image_url: "http://res.cloudinary.com/du3yzngfr/image/upload/v1508427883/elf_cz311r.png", student: class3_student)
    end
