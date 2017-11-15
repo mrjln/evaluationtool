@@ -13,9 +13,14 @@ marjo = User.create(email: "marjolein@emailadres.com", password: "abcd1234")
 #seed batches
 batch1 = Batch.create(
   number: 1,
-  starts_at: Date.parse("2014-1-1"))
-batch2 = Batch.create(number: 2)
-batch3 = Batch.create(number: 3)
+  starts_at: Date.parse("2017-5-7").beginning_of_week,
+  ends_at: Date.parse("2017-5-7").beginning_of_week + 5.days + 9.weeks)
+batch2 = Batch.create(number: 2,
+  starts_at: Date.parse("2017-8-7").beginning_of_week,
+  ends_at: Date.parse("2017-8-7").beginning_of_week + 5.days + 9.weeks)
+batch3 = Batch.create(number: 3,
+  starts_at: Date.parse("2017-8-7").beginning_of_week,
+  ends_at: Date.parse("2017-8-7").beginning_of_week + 5.days + 9.weeks)
 
 
 #class to test evaluations on

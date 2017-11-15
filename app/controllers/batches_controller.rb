@@ -12,8 +12,8 @@ class BatchesController < ApplicationController
     @percentage_green = @batch.return_percentage("green")
   end
 
-  def show_selected_student
-   render :partial=>"batches/selected_student"
+  def new
+    @batch = Batch.new
   end
 
 end
