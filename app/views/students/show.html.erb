@@ -12,9 +12,7 @@
       <% end%>
 
     <% @student.photos.each  do |photo| %>
-      <p>imagetage</p><%=image_tag photo.image.thumbnail %>
-      <img src="<%=photo%>" alt="image of student">
-      <%=photo%>
+    <%=image_tag photo.image.thumbnail %>
         <% end %>
     </div>
     <div class="container-item-individual-student">
