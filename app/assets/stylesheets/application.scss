@@ -46,21 +46,19 @@ a {
   display: flex;
   width: 100%;
   flex-wrap: wrap;
-  justify-content: flex-start;
-
+  flex-direction: row;
 }
 .container-item-batches {
-  width: 15em;
+  width: 26em;
   height:14em;
   border: 5px solid white;
-  display: flex;
-  flex-direction: column-reverse;
   justify-content: space-around;
   margin: 0.5em;
 
 }
 .container-content-batches {
   text-align: center;
+  margin: 1em;
 }
 
 .container-students{
@@ -68,16 +66,18 @@ a {
   width: 100%;
   flex-wrap: wrap;
   justify-content: flex-start;
-
 }
+
 .container-item-students {
-  width: 18em;
+  width: 25em;
   height:25em;
   border: 5px solid white;
   display: flex;
   flex-direction: column;
   justify-content: space-around;
   margin: 0.5em;
+  overflow: hidden;
+  padding: 2em;
 
 }
 .container-content-students {
@@ -88,18 +88,19 @@ a {
 .container-indivudual-student{
   display: flex;
   border: 5px solid white;
-  width: 1000px;
+  width: 100%;
   flex-wrap: wrap;
+  overflow: hidden;
 
 }
 .container-item-individual-student {
-  width: 20em;
   height: 40em;
-  border: 5px solid red;
+  border: 5px solid white;
   flex-grow: 1;
   flex-direction: row;
   justify-content: space-around;
   padding: 3em;
+  overflow: hidden;
 
 }
 .evaluation-bar {
@@ -149,5 +150,6 @@ a {
   width: 30em;
   height: 12em;
   align-self:center;
+  overflow: hidden;
 
 }

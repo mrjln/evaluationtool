@@ -10,8 +10,8 @@
   <div class="container-item-batches">
     <div class="container-content-batches">
       <h1>Batch #<%=  batch.number %></h1>
-      <p>start: <%= batch.starts_at%> </p>
-      <p>end: <%= batch.ends_at%></p>
+      <p>start: mon <%= batch.starts_at%> </p>
+      <p>end: vr <%= batch.ends_at%></p>
       <%= link_to '<button class="btn-primary">See Class</button>'.html_safe, batch %>
 
     </div>
