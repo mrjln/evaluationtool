@@ -11,6 +11,11 @@ class StudentsController < ApplicationController
      @student = @batch.students.build
   end
 
+  def edit
+    @student = @batch.students.find(params[:id])
+    @photos = @student.photos
+  end
+
   def create
       @student = @batch.students.build(student_params)
 
@@ -25,10 +30,23 @@ class StudentsController < ApplicationController
   end
 
   def destroy
-        @student = @batch.students.find(params[:id])
-        @student.destroy
-        redirect_to @batch, notice: "Student deleted!"
+    @student = @batch.students.find(params[:id])
+    @student.destroy
+    redirect_to @batch, notice: "Student deleted!"
     end
+
+  def update
+    @student = @batch.students.find(params[:id])
+
+    if @student.update(student_params)
+      image_params.each do |image|
+         @student.photos.create(image: image)
+      end
+      redirect_to batch_path(@batch), notice: "student updated"
+    else
+      render :edit
+    end
+  end
 
 
   private

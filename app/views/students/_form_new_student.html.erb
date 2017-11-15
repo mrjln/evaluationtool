@@ -3,8 +3,9 @@
   <%= form_for [@batch, @student], html: { multipart: true } do |f| %>
 
   <div class="form-group">
-      <h4>Student name</h4>
-      <%= f.label :name%>:
+      <h4>Student name: </h4>
+
+      <%= f.label :name %>:
       <%= f.text_field :name, class: "form-control", placeholder: "Name" %><br />
   </div>
 
@@ -17,10 +18,11 @@
 </span>
 </div>
 <div id="photos">
-  <%= render 'photos/list' %>
+  <p>current photo
+  </p><%= render 'photos/list' %>
 </div>
 
-    <%= f.submit "Create Student", class: "btn btn-primary" %>
+    <%= f.submit "Save", class: "btn btn-primary" %>
 <% end %>
 
 <hr>
