@@ -4,4 +4,8 @@ class StudentsController < ApplicationController
     @student = Student.find(params[:id])
     @batch = @student.batch
   end
+
+  def new
+    @student= Student.new
+  end
 end
