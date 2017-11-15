@@ -2,6 +2,7 @@ require 'rails_helper'
 
   describe "Adding a new batch " do
 
+
   feature 'Create new batch', js: true do
     scenario 'add a new batch do'do
 
