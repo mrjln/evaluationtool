@@ -30,7 +30,7 @@
           <h1><%=link_to student.name, "/batches/ #{@batch.id}/students/#{student.id}" %> </h1>
 
           <p>student id: <%= student.id%></p>
-          <%@studentcolor = student.evaluations.empty? ? "no evaluation yet" : "student.evaluations.last.color" %>
+          <%@studentcolor = student.evaluations.empty? ? "no evaluation yet" : student.evaluations.last.color %>
           <p> current status: <div class="eval <%= @studentcolor %>"> </div>  </p>
 
     </div>
