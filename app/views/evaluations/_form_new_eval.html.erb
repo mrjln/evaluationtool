@@ -1,10 +1,24 @@
 
-<%= form_for  @evaluation, url: new_batch_student_evaluation_url(@batch, @student), html: { method: :post } do |f|%>
+<%= form_for  @evaluation, url: batch_student_evaluations_url(@batch, @student), html: { method: :post } do |f|%>
 
-  <div class="form-group">
-    <label> Title of the Song: </label>
+<div class="form-group">
+    <h4>Score</h4>
+    <%= f.label :color%>:
+    <%= f.select :color, [["red"], ["yellow"], ["green"]] %>
+</div>
+
+<div class="form-group">
+    <h4>Date</h4>
+  <%= f.label :evaluation_date %>:
+  <%= f.date_field  :evaluation_date, class: "form-control" %><br />
   </div>
+
+
+  <%= f.submit "Add Evaluation", class: "btn btn-primary" %>
 <% end %>
+
+
+<hr>
 
 <a href="/batches/<%=@batch.id%>"><button class="btn-primary">Back to Class <%=@batch.number %> </button></a>
 
