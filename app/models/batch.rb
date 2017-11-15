@@ -2,7 +2,6 @@ class Batch < ApplicationRecord
   has_many :students
 
   validates :number, presence: true
-  validates :starts_at, presence: true
 
 
   def student_to_ask_question
@@ -39,8 +38,9 @@ class Batch < ApplicationRecord
   end
 
 def get_start_end_date
-  self.starts_at = self.starts_at.beginning_of_week
-  last_day_of_week = self.starts_at + 5.days
+  self.starts_at = Date.today if self.starts_at.nil?
+  start_date = self.starts_at.beginning_of_week
+  last_day_of_week = start_date + 5.days
   self.ends_at = last_day_of_week + 9.weeks
 end
 

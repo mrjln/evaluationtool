@@ -1,10 +1,8 @@
 require 'rails_helper'
 
-#RSpec.describe Batch, type: :model do
-#  pending "add some examples to (or delete) #{__FILE__}"
-#end
+RSpec.describe Batch, type: :model do
 
-describe ".pick_semi_random_color" do
+  describe ".pick_semi_random_color" do
   let(:batch) {create :batch}
 
     it "returns color" do
@@ -12,7 +10,7 @@ describe ".pick_semi_random_color" do
     end
   end
 
-  describe ".return_percentage" do
+  describe ".return_percentage()" do
     let(:batch) {create :batch}
     let(:student1) { create :student, batch: batch }
     let(:student2) { create :student, batch: batch }
@@ -25,6 +23,19 @@ describe ".pick_semi_random_color" do
     let(:evaluation) { create :evaluation, color: "green", student: student4 }
 
       it "returns percentage of students with the color red, yellow or blue" do
-        expect(batch.return_percentage("red")).to be_a(integer) 
+        expect(batch.return_percentage("red")).to be_a(integer)
       end
+  end
+
+
+  describe "validations" do
+    it "is invalid without a number" do
+    batch = Batch.new(number: "")
+    batch.valid?
+    expect(batch.errors).to have_key(:number)
     end
+  end
+
+
+
+end
