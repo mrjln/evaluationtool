@@ -3,6 +3,8 @@ Rails.application.routes.draw do
   devise_for :users
 
   resources :batches, except: [:destroy]  do
-    resources :students, only: [:index, :show]
+    resources :students, except: [:destroy] do
+      resources :evaluations, except: [:destroy]
+    end
   end
 end

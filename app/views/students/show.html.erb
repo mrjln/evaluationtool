@@ -4,6 +4,10 @@
 
 
 <div class="container-item-individual-student">
+    <% @student.photos.each  do |photo| %>
+    <%=image_tag photo.image.thumbnail %>
+        <% end %>
+
   <h2> <%= @student.name %></h2>
       <% @student.evaluations.each do |evaluation| %>
       <p> current status: <div class="eval <%= evaluation.color %>"> </div>  </p>
@@ -11,14 +15,12 @@
       <p> last evaluation <%=evaluation.evaluation_date%> </p>
       <% end%>
 
-    <% @student.photos.each  do |photo| %>
-      <%=image_tag photo.image.thumbnail %>
-        <% end %>
+      <p> Student id <%= @student.id %>  </p>
+      <p> Class number #<%= @student.batch.number %>  </p>
     </div>
     <div class="container-item-individual-student">
-      <p> Student id <%= @student.id %>  </p>
-          <p> Class number #<%= @student.batch.number %>  </p>
-          <p>placholder for form</p>
+
+          <%= render "evaluations/form_new_eval" %>
 
   </div>
 

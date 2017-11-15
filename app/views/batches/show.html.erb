@@ -20,7 +20,14 @@
 
 </hr>
 </hr>
+
 <div class="container-students">
+
+  <div class="container-item-students">
+      <div class="container-content-students">
+      <div> <%= link_to '<button class="btn-primary">Add a student to Batch</button>'.html_safe, "/batches/ #{@batch.id}/students/new" %></div>
+      </div>
+    </div>
   <% @batch.students.each do |student|%>
 <div class="container-item-students">
     <div class="container-content-students">
