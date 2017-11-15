@@ -4,7 +4,7 @@ require 'rails_helper'
     let(:batch) {create :batch}
 
   feature 'Create new student in batch', js: true do
-    scenario 'add a new student to batch do'do
+    scenario 'add a new student do'do
 
       visit "batches/#{batch.id}/students/new"
       fill_in 'Name', with: 'ditiseentestnaamextralang'
