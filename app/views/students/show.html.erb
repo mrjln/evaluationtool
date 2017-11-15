@@ -9,14 +9,14 @@
         <% end %>
 
   <h2> <%= @student.name %></h2>
-      <% @student.evaluations.each do |evaluation| %>
-      <p> current status: <div class="eval <%= evaluation.color %>"> </div>  </p>
-      <br>
-      <p> last evaluation <%=evaluation.evaluation_date%> </p>
-      <% end%>
+      <%@studentcolor = @evaluations.empty? ? "no evaluation yet" : @evaluations.last.color %>
+      <p> current status: <div class="eval <%= @studentcolor%>"> </div> </p>
+      <%@last_eval_date = @evaluations.empty? ? "no evaluations yet" : @evaluations.last.evaluation_date %>
+      <p> last evaluation date: <%=@last_eval_date %></p>
 
       <p> Student id <%= @student.id %>  </p>
       <p> Class number #<%= @student.batch.number %>  </p>
+
     </div>
     <div class="container-item-individual-student">
 
