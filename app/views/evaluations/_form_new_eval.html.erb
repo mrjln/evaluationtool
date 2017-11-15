@@ -1,0 +1,13 @@
+
+<%= form_for  @evaluation, url: new_batch_student_evaluation_url(@batch, @student), html: { method: :post } do |f|%>
+
+  <div class="form-group">
+    <label> Title of the Song: </label>
+  </div>
+<% end %>
+
+<a href="/batches/<%=@batch.id%>"><button class="btn-primary">Back to Class <%=@batch.number %> </button></a>
+
+
+</div>
+</div>

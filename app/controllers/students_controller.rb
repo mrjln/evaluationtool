@@ -3,6 +3,8 @@ class StudentsController < ApplicationController
 
   def show
     @student = Student.find(params[:id])
+    @evaluations = @student.evaluations
+    @evaluation = Evaluation.new
   end
 
   def new
