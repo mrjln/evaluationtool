@@ -29,7 +29,7 @@ class StudentsController < ApplicationController
 
   def set_batch
    @batch = Batch.find(params[:batch_id])
- end
+  end
 
 
   def student_params
