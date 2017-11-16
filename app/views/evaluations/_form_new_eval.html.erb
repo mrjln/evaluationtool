@@ -16,16 +16,6 @@
     <%= f.select :color, [["red"], ["yellow"], ["green"]] , class: "form_dropdown" %>
 </div>
 
-<%= form_for @comment, url: batch_student_evaluation_comments_url(@batch, @student, @evaluation), html: { method: :post } do |f| %>
-  <div class="form-group">
-  <%= f.text_area :content, size: "35x5" %>
-  </div>
-
-    <div class="form-group">
-  <%= f.submit "Comment", class: "btn btn-primary" %>
-<% end %>
-</div>
-
 <div class="form-group">
   <%= f.submit "Add Evaluation", class: "btn btn-primary" %>
 <% end %>

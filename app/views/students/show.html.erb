@@ -18,7 +18,12 @@
       <p> Student id <%= @student.id %>  </p>
       <p> Class number #<%= @student.batch.number %>  </p>
       <%= link_to "Update student info", edit_batch_student_url(@batch, @student) %>
-      <%= @student.evaluations.last.comments.last.content%>
+      <p>test</p>
+      <% @student.evaluations.last.comments.each do |comment|%>
+      <%= comment.content%>
+      <%end%>
+
+        <%= render "comments/form_new_comment" %>
 </div>
 
 
