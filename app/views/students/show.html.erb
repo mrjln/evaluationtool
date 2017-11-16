@@ -27,6 +27,11 @@
 
           <%= render "evaluations/form_new_eval" %>
 
+          <%= @student.create_hash %>
+          <%= @student.evaluation_exists(Date.today-1.day) %>
+            <%= @student.evaluation_exists(Date.parse("2022-02-09")) %>
+            <%= @student.evaluation_exists(@evaluations.first.evaluation_date) %>
+
   </div>
 
 </div>
