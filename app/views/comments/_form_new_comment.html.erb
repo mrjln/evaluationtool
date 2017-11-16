@@ -1,5 +1,5 @@
 <h4>Add comment for this evaluation on date: <%= @evaluations.last.evaluation_date %></h4>
-<%= form_for @comment, url:batch_student_evaluation_comments_url(@batch, @student, @student.evaluations.last), html: { method: :post } do |f|%>
+<%= form_for @comment, url:batch_student_evaluation_comments_url(@batch, @student, @evaluations.last), html: { method: :post } do |f|%>
 
   <div class="form-group">
     <%= f.text_area :content, class: "form-control" %><br />

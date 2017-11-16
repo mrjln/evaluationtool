@@ -4,7 +4,7 @@
 <div class="container-item-individual-student">
     <h4>Student Info </h4>   <p><%= link_to "Update student info", edit_batch_student_url(@batch, @student) %> </p>
     <hr>
-    <% @student.photos.each  do |photo| %>
+    <% @photos.each  do |photo| %>
     <%=image_tag photo.image.thumbnail %>
         <% end %>
 
@@ -14,10 +14,7 @@
       <p> Student id <%= @student.id %>  </p>
 
       <%= render "comments/all_comments" if !@evaluations.empty? %>
-  
-
-
-        <%= render "comments/form_new_comment" if !@evaluations.empty? %>
+      <%= render "comments/form_new_comment" if !@evaluations.empty? %>
 </div>
 
 
@@ -34,8 +31,12 @@
       <a href="/batches/<%=@batch.id%>/students/<%=@next_student.id %>"><button class="btn-primary"> Next Student </button></a>
       <% end %>
 
-      <%=  @next_student.id %>
-
+      <p>all:</p>
+      <% @student.evaluations.each do |evaluation| %>
+      <%= evaluation.evaluation_date %> <p>---</p>
+      <% end %>
+      <p>most recent </p>
+      <%= @student.most_recent_evaluation.evaluation_date %>
 
 </div>
 

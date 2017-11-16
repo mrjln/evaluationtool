@@ -27,5 +27,24 @@ class Student < ApplicationRecord
   return evaluations_hash
   end
 
+  def most_recent_evaluation
+    n = 0
+    ten_weeks_in_days = 70
+    @all_evaluations = self.evaluations
+    if !@all_evaluations.empty?
+        @all_evaluations.each do |evaluation|
+          if evaluation.evaluation_date == Date.today - n
+            @most_recent_evaluation = evaluation
+            break
+          else
+            n =+ 1
+            break if n > ten_weeks_in_days
+          end
+        end
+    else
+        return "No evaluation yet or evaluation is more than 10 weeks ago"
 
+        return @most_recent_evaluation
+    end
+  end
 end
