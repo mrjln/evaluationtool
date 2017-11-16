@@ -17,14 +17,13 @@ before_action :set_student
   end
 
   def create
-    @evaluation = @student.evaluations.build(evaluation_params)
-
+    @evaluation = Evaluation.find(params[:evaluation_date]) || @student.evaluations.build(evaluation_params) 
           if @evaluation.save
-                if @student.evaluation_exists(@evaluation.evaluation_date)
-                   redirect_to batch_student_path(@batch, @student), notice: "Student evaluation on #{@evaluation.evaluation_date} exists, evaluation #{@evaluation.evaluation_date} updated to #{@evaluation.color} !"
-                 else
-                   redirect_to batch_student_path(@batch, @student),notice: "Evaluation added on #{@evaluation.evaluation_date}"
-                  end
+                #if @student.evaluation_exists(@evaluation.evaluation_date)
+                #   redirect_to batch_student_path(@batch, @student), notice: "Student evaluation on #{@evaluation.evaluation_date} exists, evaluation #{@evaluation.evaluation_date} updated to #{@evaluation.color} !"
+                # else
+           redirect_to batch_student_path(@batch, @student),notice: "Evaluation added on #{@evaluation.evaluation_date}"
+                #  end
           else
             redirect_to batch_student_path(@batch, @student), notice: 'No evaluation added'
           end

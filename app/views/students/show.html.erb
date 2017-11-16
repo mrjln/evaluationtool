@@ -24,6 +24,11 @@
 
           <%= render "evaluations/form_new_eval" %>
 
+
+          <% @student.evaluations.each do |evaluation| %>
+          <%= evaluation.evaluation_date%> : <%= evaluation.color%>
+          <% end%>
+
   </div>
 
 </div>
