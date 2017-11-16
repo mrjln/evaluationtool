@@ -61,8 +61,10 @@ def next_student(student)
   amount_students = amount_students - 1
   if index != amount_students
     index_next_student = index + 1
+  else
+    index_next_student = index 
   end
-    @next_student = students_in_class[index]
+    @next_student = students_in_class[index_next_student]
     return @next_student
 end
 
