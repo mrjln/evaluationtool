@@ -1,0 +1,7 @@
+<hr>
+<% @comments.each do |comment| %>
+
+    <% @user = User.find(comment.user_id)%>
+
+    <p><%= @user.email %> says: <%= comment.content%> </p>
+<% end %>
