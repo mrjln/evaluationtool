@@ -10,16 +10,20 @@
     <%= f.date_field  :evaluation_date, class: "form-control" %><br />
     </div>
 
-    <div class="form-group">
-        <h4>Date</h4>
-      <%= f.label :comments%>:
-      <%= f.text :comments, class: "form-control" %><br />
-      </div>
-
 <div class="form-group">
     <h4>Score</h4>
     <%= f.label :color%>:
     <%= f.select :color, [["red"], ["yellow"], ["green"]] , class: "form_dropdown" %>
+</div>
+
+<%= form_for @comment, url: batch_student_evaluation_comments_url(@batch, @student, @evaluation), html: { method: :post } do |f| %>
+  <div class="form-group">
+  <%= f.text_area :content, size: "35x5" %>
+  </div>
+
+    <div class="form-group">
+  <%= f.submit "Comment", class: "btn btn-primary" %>
+<% end %>
 </div>
 
 <div class="form-group">
@@ -27,4 +31,5 @@
 <% end %>
 <hr>
 </div>
+
 </div>

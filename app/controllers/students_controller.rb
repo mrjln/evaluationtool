@@ -5,6 +5,7 @@ class StudentsController < ApplicationController
     @student = Student.find(params[:id])
     @evaluations = @student.evaluations
     @evaluation = Evaluation.new
+    @comment = Comment.new
     @next_student = @batch.next_student(@student)
   end
 

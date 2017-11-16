@@ -40,6 +40,6 @@ before_action :set_student
   end
 
   def evaluation_params
-      params.require(:evaluation).permit(:color, :evaluation_date, :student_id)
+      params.require(:evaluation).permit(:color, :evaluation_date, :student_id, comments: [])
   end
 end

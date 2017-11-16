@@ -1,1 +1,14 @@
 <h1>new comment</h1>
+
+<%= form_for  @comment, batch_student_evaluation_comment_url do |f|%>
+
+  <div class="form-group">
+    <h4>Comment</h4>
+    <%= f.label :content%>:
+    <%= f.text_area :content, class: "form-control" %><br />
+  </div>
+
+  <div class="form-group">
+    <%= f.submit "Add Evaluation", class: "btn btn-primary" %>
+  </div>
+  <% end %>
