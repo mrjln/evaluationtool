@@ -6,7 +6,7 @@ class StudentsController < ApplicationController
     @photos = @student.photos
     @evaluations =  @student.evaluations
     @studentcolor = @evaluations.empty? ? "no evaluation yet" : @student.most_recent_evaluation.color
-
+    @most_recent_evaluation_date = @evaluations.empty? ? "no evaluation yet" : @student.most_recent_evaluation.evaluation_date
     @evaluation = Evaluation.new
     @comment = Comment.new
     @next_student = @batch.next_student(@student)
