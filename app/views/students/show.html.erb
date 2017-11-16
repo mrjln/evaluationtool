@@ -36,7 +36,10 @@
       <%= evaluation.evaluation_date %> <p>---</p>
       <% end %>
       <p>most recent </p>
-      <%= @student.most_recent_evaluation.evaluation_date %>
+      <%= @student.most_recent_evaluation %>
+      <%= @student.most_recent_evaluation %>
+      <%=@student.find_evaluation(Date.today)%>
+      <%=@student.find_evaluation(Date.today - 100.days)%>
 
 </div>
 

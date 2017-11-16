@@ -11,7 +11,7 @@ class StudentsController < ApplicationController
     @comment = Comment.new
     @next_student = @batch.next_student(@student)
 
-    @comments = Comment.where(evaluation_id: @evaluations.last.id).order("created_at DESC")
+    @comments = @evaluations.empty? ? "no comments yet" : Comment.where(evaluation_id: @student.most_recent_evaluation).order("created_at DESC")
 
   end
 
