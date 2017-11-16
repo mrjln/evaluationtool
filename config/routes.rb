@@ -4,7 +4,9 @@ Rails.application.routes.draw do
 
   resources :batches, except: [:destroy] do
     resources :students do
-      resources :evaluations, except: [:destroy]
+      resources :evaluations, except: [:destroy] do
+        resources :comments
+      end
     end
   end
 end

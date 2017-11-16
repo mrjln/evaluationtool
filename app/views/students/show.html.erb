@@ -1,5 +1,6 @@
 <a href="/batches/<%=@batch.id %>" > <h3> Back to Class</h3> </a>
 <div class="container-indivudual-student">
+
 <div class="container-item-individual-student">
   <h4>Student Info </h4>
   <hr>
@@ -21,7 +22,16 @@
     <div class="container-item-individual-student">
       <h4>Student status </h4>
       <hr>
-<%= render "evaluations/form_new_eval" %>
+
+      <%= render "comments/form_new_comment" %>
+      <%= render "evaluations/form_new_eval" %>
+
+      <%if @next_student.id == @student.id %>
+      <button class="btn-primary inactive"> Next Student </button></a>
+      <a href="/batches/<%=@batch.id%>"><button class="btn-primary">Back to Class <%=@batch.number %> </button></a>
+      <% else %>
+      <a href="/batches/<%=@batch.id%>/students/<%=@next_student.id %>"><button class="btn-primary"> Next Student </button></a>
+      <% end %>
 
 <%=  @next_student.id %>
 
