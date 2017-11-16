@@ -1,9 +1,6 @@
 require 'rails_helper'
 
-  describe "Adding a new evaluation" do
-    before { login_as user }
-
-    let(:user) { create :user}
+  describe "Adding a new comment to an evaluation " do
     let(:batch) {create :batch}
     let(:student) {create :student, batch: batch}
 
@@ -11,9 +8,11 @@ require 'rails_helper'
     scenario 'add a new evaluation to student' do
 
       visit "batches/#{batch.id}/students/#{student.id}"
-      select "green", :from => "evaluation_color"
-      click_button("Add-evaluation")
-        sleep (5)
+      fill_in 'Add a comment', with: 'ditiseentesteenhelelangtekstomdatdatgoedisomtetesten'
+      page.execute_script("$('form').submit()")
+
+      expect(page).to have_content('ditiseentesteenhelelangtekstomdatdatgoedisomtetesten')
+
     end
   end
 end

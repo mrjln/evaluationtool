@@ -5,13 +5,12 @@ class StudentsController < ApplicationController
     @student = Student.find(params[:id])
     @photos = @student.photos
     @evaluations =  @student.evaluations
-    @studentcolor = @evaluations.empty? ? "no evaluation yet" : @student.most_recent_evaluation.color
+    @studentcolor = @student.student_color
+    @comments = @evaluations.empty? ? "no comments yet" : Comment.where(evaluation_id: @student.most_recent_evaluation).order("created_at DESC")
     @most_recent_evaluation_date = @evaluations.empty? ? "no evaluation yet" : @student.most_recent_evaluation.evaluation_date
     @evaluation = Evaluation.new
     @comment = Comment.new
     @next_student = @batch.next_student(@student)
-
-    @comments = @evaluations.empty? ? "no comments yet" : Comment.where(evaluation_id: @student.most_recent_evaluation).order("created_at DESC")
 
   end
 

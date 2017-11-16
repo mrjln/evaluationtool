@@ -1,6 +1,8 @@
 require 'rails_helper'
 
   describe "Adding a new student " do
+    before { login_as user }
+    let(:user) {create :user}
     let(:batch) {create :batch}
 
   feature 'Create new student in batch', js: true do

@@ -33,7 +33,7 @@ class Student < ApplicationRecord
     ten_weeks_in_days = 70
     @all_evaluations = self.evaluations
     if @all_evaluations.empty?
-      return "No evaluation yet or evaluation is more than 10 weeks ago"
+      return []
     else
       while days_number < ten_weeks_in_days do
         if @student_to_evaluate.find_evaluation(Date.today - days_number.days)
@@ -57,6 +57,17 @@ class Student < ApplicationRecord
       end
     end
     return false
+  end
+
+  def student_color
+  @student = self
+  @student_evaluations = self.evaluations
+
+    if @student_evaluations.empty?
+       @studentcolor = "no color yet"
+     else
+       @studentcolor = @student.most_recent_evaluation.color
+    end
   end
 
 end #end class
