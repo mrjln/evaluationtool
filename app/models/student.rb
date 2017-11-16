@@ -17,7 +17,6 @@ class Student < ApplicationRecord
   end
 
 
-
   def create_hash
   evaluations_hash = Hash.new
 
@@ -27,5 +26,6 @@ class Student < ApplicationRecord
 
   return evaluations_hash
   end
+
 
 end
