@@ -20,7 +20,7 @@
 
 <div class="container-item-individual-student">
       <h4>Student Evaluation </h4>
-      <hr>
+
 
       <%= render "evaluations/form_new_eval" %>
 
@@ -33,14 +33,13 @@
 
       <p>all:</p>
       <% @student.evaluations.each do |evaluation| %>
-      <%= evaluation.evaluation_date %> <p>---</p>
+      <%= evaluation.evaluation_date %> 
+      <%= evaluation.color %><p>---</p>
       <% end %>
       <p>most recent </p>
       <%= @student.most_recent_evaluation.evaluation_date %>
       <%= @student.most_recent_evaluation.color %>
         <%= @student.most_recent_evaluation.id %>
-      <%=@student.find_evaluation(Date.today)%>
-      <%=@student.find_evaluation(Date.today - 100.days)%>
 
 </div>
 
