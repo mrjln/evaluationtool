@@ -28,7 +28,7 @@ def create
   end
 
   def set_evaluation
-   @evaluation = @student.evaluations.find(params[:evaluation_id])
+   @evaluation = @student.most_recent_evaluation
   end
 
 

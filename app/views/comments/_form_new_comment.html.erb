@@ -1,11 +1,11 @@
-<h4>Add comment for this evaluation on date: <%= @evaluations.last.evaluation_date %></h4>
-<%= form_for @comment, url:batch_student_evaluation_comments_url(@batch, @student, @student.evaluations.last), html: { method: :post } do |f|%>
+
+<%= form_for @comment, url:batch_student_evaluation_comments_url(@batch, @student, @student.most_recent_evaluation), html: { method: :post } do |f|%>
 
   <div class="form-group">
     <%= f.text_area :content, class: "form-control" %><br />
   </div>
 
   <div class="form-group">
-    <%= f.submit "Add Comment", class: "btn btn-primary" %>
+    <%= f.submit "Add Comment to this evaluation", class: "btn btn-primary" %>
   </div>
   <% end %>

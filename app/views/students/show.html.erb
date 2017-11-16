@@ -4,26 +4,23 @@
 <div class="container-item-individual-student">
     <h4>Student Info </h4>   <p><%= link_to "Update student info", edit_batch_student_url(@batch, @student) %> </p>
     <hr>
-    <% @student.photos.each  do |photo| %>
+    <% @photos.each  do |photo| %>
     <%=image_tag photo.image.thumbnail %>
         <% end %>
 
 
       <h2> <%= @student.name %></h2>
-      <p> current status: <div id="<%= @studentcolor%>" class="eval <%= @studentcolor%>"> </div> </p>
-      <p> Student id <%= @student.id %>  </p>
+      <p> most recent evaluation: <%=@most_recent_evaluation_date%></p>
+      <p> status: <div id="<%= @studentcolor%>" class="eval <%= @studentcolor%>"> </div> </p>
 
       <%= render "comments/all_comments" if !@evaluations.empty? %>
-  
-
-
-        <%= render "comments/form_new_comment" if !@evaluations.empty? %>
+      <%= render "comments/form_new_comment" if !@evaluations.empty? %>
 </div>
 
 
 <div class="container-item-individual-student">
       <h4>Student Evaluation </h4>
-      <hr>
+
 
       <%= render "evaluations/form_new_eval" %>
 
@@ -34,8 +31,7 @@
       <a href="/batches/<%=@batch.id%>/students/<%=@next_student.id %>"><button class="btn-primary"> Next Student </button></a>
       <% end %>
 
-      <%=  @next_student.id %>
-
+    
 
 </div>
 

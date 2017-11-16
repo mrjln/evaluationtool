@@ -3,12 +3,15 @@ class StudentsController < ApplicationController
 
   def show
     @student = Student.find(params[:id])
+    @photos = @student.photos
     @evaluations =  @student.evaluations
+    @studentcolor = @evaluations.empty? ? "no evaluation yet" : @student.most_recent_evaluation.color
+    @most_recent_evaluation_date = @evaluations.empty? ? "no evaluation yet" : @student.most_recent_evaluation.evaluation_date
     @evaluation = Evaluation.new
     @comment = Comment.new
     @next_student = @batch.next_student(@student)
-    @studentcolor = @evaluations.empty? ? "no evaluation yet" : @evaluations.last.color
-    @comments = Comment.where(evaluation_id: @evaluations.last.id).order("created_at DESC")
+
+    @comments = @evaluations.empty? ? "no comments yet" : Comment.where(evaluation_id: @student.most_recent_evaluation).order("created_at DESC")
 
   end
 
