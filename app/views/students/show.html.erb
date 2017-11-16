@@ -1,8 +1,5 @@
-
-  <a href="/batches/<%=@batch.id %>" > <h3> Back to Class</h3> </a>
+<a href="/batches/<%=@batch.id %>" > <h3> Back to Class</h3> </a>
 <div class="container-indivudual-student">
-
-
 <div class="container-item-individual-student">
   <h4>Student Info </h4>
   <hr>
@@ -26,11 +23,6 @@
       <hr>
 
           <%= render "evaluations/form_new_eval" %>
-
-          <%= @student.create_hash %>
-          <%= @student.evaluation_exists(Date.today-1.day) %>
-            <%= @student.evaluation_exists(Date.parse("2022-02-09")) %>
-            <%= @student.evaluation_exists(@evaluations.first.evaluation_date) %>
 
   </div>
 
