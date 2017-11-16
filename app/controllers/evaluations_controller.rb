@@ -1,6 +1,7 @@
 class EvaluationsController < ApplicationController
 before_action :set_batch
 before_action :set_student
+#before_action :evaluation_exists
 
   def index
     @evaluations = @student.evaluations
@@ -18,9 +19,14 @@ before_action :set_student
 
   def create
     @evaluation = @student.evaluations.build(evaluation_params)
-    if @student.evaluation_exists(@evaluation.evaluation_date)
-       redirect_to batch_student_path(@batch, @student), notice: "Student evaluation on #{@evaluation.evaluation_date} exists, try the update button"
-     elsif @evaluation.save
+    #if @student.evaluation_exists(@evaluation.evaluation_date)
+    #   redirect_to batch_student_path(@batch, @student), notice: "Student evaluation on #{@evaluation.evaluation_date} exists, try the update button"
+    #else
+    #  @evaluation.save
+    #end
+
+
+     if @evaluation.save
      redirect_to batch_student_path(@batch, @student),notice: "Evaluation added on #{@evaluation.evaluation_date}"
     else
       redirect_to batch_student_path(@batch, @student), notice: 'No evaluation added'
@@ -30,7 +36,9 @@ before_action :set_student
 
   private
 
-
+  #def evaluation_exists
+#
+  #end
   def set_batch
    @batch = Batch.find(params[:batch_id])
   end
