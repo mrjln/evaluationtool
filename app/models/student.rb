@@ -28,7 +28,7 @@ class Student < ApplicationRecord
   end
 
   def most_recent_evaluation
-    i = 0
+    @student = self
     days_number = 0
     ten_weeks_in_days = 70
     @all_evaluations = self.evaluations
@@ -36,20 +36,14 @@ class Student < ApplicationRecord
       return "No evaluation yet or evaluation is more than 10 weeks ago"
     else
       while days_number < ten_weeks_in_days do
-        @all_evaluations.each do |evaluation|
-        if evaluation.evaluation_date == Date.today - days_number.days
-          @most_recent_evaluation = evaluation
-        else
-          @most_recent_evaluation = "not found"
-        end #end of ifstatementinsideeach
+        if @student.find_evaluation(Date.today - days_number.days)
+          @most_recent_evaluation = Evaluation.where(evaluation_date: Date.today - days_number.days).take
+          break
+        end #end ifstatementfind
         days_number += 1
-      end #end each
-
       end #endwhileloop
-
-
-      return @most_recent_evaluation
     end #end ifstatement
+    return @most_recent_evaluation
   end #end method
 
 
@@ -60,7 +54,7 @@ class Student < ApplicationRecord
         return true
       end
     end
-    return false 
+    return false
   end
 
 end #end class

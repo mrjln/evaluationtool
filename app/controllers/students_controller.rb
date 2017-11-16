@@ -5,7 +5,7 @@ class StudentsController < ApplicationController
     @student = Student.find(params[:id])
     @photos = @student.photos
     @evaluations =  @student.evaluations
-    @studentcolor = @evaluations.empty? ? "no evaluation yet" : @evaluations.last.color
+    @studentcolor = @evaluations.empty? ? "no evaluation yet" : @student.most_recent_evaluation.color
 
     @evaluation = Evaluation.new
     @comment = Comment.new
