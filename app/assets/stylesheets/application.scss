@@ -110,7 +110,7 @@ a {
 
 }
 .container-item-individual-student {
-  height: 40em;
+  height: 80em;
   border: 5px solid white;
   flex-grow: 1;
   flex-direction: row;
@@ -132,7 +132,12 @@ a {
   flex-direction: row;
 }
 
-
+input, button, select, textarea {
+    font-family: inherit;
+    font-size: inherit;
+    line-height: inherit;
+    color: black;
+}
 .eval {
   display:  inline-block;
   width: 20px;

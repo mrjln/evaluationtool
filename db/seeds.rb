@@ -39,7 +39,8 @@ student10 = Student.create!({ name: Faker::HarryPotter.character, batch: batch1,
 red_evaluation_student1= Evaluation.create!({
   evaluation_date: Date.parse("2017-11-14"),
   color: "red",
-  student: student1
+  student: student1,
+  comments: [Comment.create({content: "Dit is een test comment yay", user: marjo})]
   })
 
 yellow_evaluation_student2= Evaluation.create!({

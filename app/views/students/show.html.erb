@@ -1,31 +1,42 @@
-<a href="/batches/<%=@batch.id %>" > <h3> Back to Class</h3> </a>
+<a href="/batches/<%=@batch.id %>" > <h3> Back to Class#<%= @student.batch.number %></h3> </a>
 <div class="container-indivudual-student">
+
 <div class="container-item-individual-student">
-  <h4>Student Info </h4>
-  <hr>
+    <h4>Student Info </h4>   <p><%= link_to "Update student info", edit_batch_student_url(@batch, @student) %> </p>
+    <hr>
     <% @student.photos.each  do |photo| %>
     <%=image_tag photo.image.thumbnail %>
         <% end %>
 
-  <h2> <%= @student.name %></h2>
-      <%@studentcolor = @evaluations.empty? ? "no evaluation yet" : @evaluations.last.color %>
+
+      <h2> <%= @student.name %></h2>
       <p> current status: <div id="<%= @studentcolor%>" class="eval <%= @studentcolor%>"> </div> </p>
-      <%@last_eval_date = @evaluations.empty? ? "no evaluations yet" : @evaluations.last.evaluation_date %>
-      <p> last evaluation date: <%=@last_eval_date %></p>
-
       <p> Student id <%= @student.id %>  </p>
-      <p> Class number #<%= @student.batch.number %>  </p>
-      <%= link_to "Update student info", edit_batch_student_url(@batch, @student) %>
 
-    </div>
-    <div class="container-item-individual-student">
-      <h4>Student status </h4>
+      <%= render "comments/all_comments" if !@evaluations.empty? %>
+  
+
+
+        <%= render "comments/form_new_comment" if !@evaluations.empty? %>
+</div>
+
+
+<div class="container-item-individual-student">
+      <h4>Student Evaluation </h4>
       <hr>
-<%= render "evaluations/form_new_eval" %>
 
-<%=  @next_student.id %>
+      <%= render "evaluations/form_new_eval" %>
+
+      <%if @next_student.id == @student.id %>
+      <button class="btn-primary inactive"> Next Student </button></a>
+      <a href="/batches/<%=@batch.id%>"><button class="btn-primary">Back to Class <%=@batch.number %> </button></a>
+      <% else %>
+      <a href="/batches/<%=@batch.id%>/students/<%=@next_student.id %>"><button class="btn-primary"> Next Student </button></a>
+      <% end %>
+
+      <%=  @next_student.id %>
 
 
-  </div>
+</div>
 
 </div>
