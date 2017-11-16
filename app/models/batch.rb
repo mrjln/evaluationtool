@@ -54,5 +54,17 @@ def get_start_end_date
   self.ends_at = last_day_of_week + 9.weeks
 end
 
+def next_student(student)
+  amount_students = self.students.count
+  students_in_class = self.students
+  index = students_in_class.index(student)
+  amount_students = amount_students - 1
+  if index != amount_students
+    index_next_student = index + 1
+  end
+    @next_student = students_in_class[index]
+    return @next_student
+end
+
 
 end
