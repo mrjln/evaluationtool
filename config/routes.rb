@@ -8,7 +8,6 @@ Rails.application.routes.draw do
     resources :students do
       post "evaluations/create_and_next" => "evaluations#create_and_next"
       resources :evaluations, except: [:destroy] do
-
         resources :comments
       end
 
