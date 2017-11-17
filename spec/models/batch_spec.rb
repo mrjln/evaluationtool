@@ -36,6 +36,21 @@ RSpec.describe Batch, type: :model do
     end
   end
 
+  describe ".next_student()" do
+    let(:batch) {create :batch}
+    let(:student1) { create :student, batch: batch }
+    let(:student2) { create :student, batch: batch }
+    let(:student3) { create :student, batch: batch }
+    let(:student4) { create :student, batch: batch }
+
+
+      it "the next student in the batch" do
+        expect(batch.next_student(student2)).to eq(student2)
+
+      end
+  end
+
+
 
 
 end

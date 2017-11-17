@@ -11,9 +11,11 @@
   <a href="/batches/<%=@batch.id%>"><button class="btn-primary">Ask a question</button></a>
   </div>
   <div class="selected_student">
-    <% if !@selected_student.nil? %>
-    <%= render 'batches/selected_student' %>
-    <%end%>
+      <% if !@selected_student.nil? %>
+      <%= render 'batches/selected_student' %>
+      <% else %>
+      <h4> Color is not in the batch </h4>
+      <%end%>
   </div>
 </div>
 
@@ -33,13 +35,13 @@
       <% student.photos.each  do |photo| %>
         <%=image_tag photo.image.thumbnail %>
           <% end %>
-          <h1><%=link_to student.name, "/batches/ #{@batch.id}/students/#{student.id}" %> </h1>
+          <h4><%=link_to student.name, "/batches/ #{@batch.id}/students/#{student.id}" %> </h4>
 
           <p>student id: <%= student.id%></p>
-          <%@studentcolor = student.evaluations.empty? ? "no evaluation yet" : student.evaluations.last.color %>
+          <%@studentcolor = student.evaluations.empty? ? "no evaluation yet" : student.most_recent_evaluation.color %>
           <p> current status: <div class="eval <%= @studentcolor %>"> </div>  </p>
           <p><%= link_to "Delete student","/batches/ #{@batch.id}/students/#{student.id}", id: "#{student.id}", method: :delete, data: {confirm: "You ar deleting a student. Are your sure?"} %> </p>
-
+          <%= link_to "Update student info", edit_batch_student_url(@batch, student) %> </p>
     </div>
   </div>
     <%end%>
