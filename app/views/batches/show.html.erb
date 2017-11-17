@@ -39,8 +39,8 @@
           <p>student id: <%= student.id%></p>
           <%@studentcolor = student.evaluations.empty? ? "no evaluation yet" : student.evaluations.last.color %>
           <p> current status: <div class="eval <%= @studentcolor %>"> </div>  </p>
-          <p><%= link_to "Delete student","/batches/ #{@batch.id}/students/#{student.id}", method: :delete, data: {confirm: "You ar deleting a student. Are your sure?"} %> </p>
-          
+          <p><%= link_to "Delete student","/batches/ #{@batch.id}/students/#{student.id}", id: "#{student.id}", method: :delete, data: {confirm: "You ar deleting a student. Are your sure?"} %> </p>
+
     </div>
   </div>
     <%end%>
