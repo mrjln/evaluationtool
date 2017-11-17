@@ -18,26 +18,38 @@ before_action :set_student
   end
 
   def create
-    @evaluation = @student.evaluations.build(evaluation_params)
-    #if !@student.evaluation_exists(@evaluation.evaluation_date)
+    @next_student = @batch.next_student(@student)
+    if params[:submitformname] == 'Add Evaluation'
+          @evaluation = @student.evaluations.build(evaluation_params)
+          #if !@student.evaluation_exists(@evaluation.evaluation_date)
 
-     if @evaluation.save
-     redirect_to batch_student_path(@batch, @student),notice: "Evaluation added"
-    else
-      redirect_to batch_student_path(@batch, @student), notice: 'No evaluation added'
+           if @evaluation.save
+           redirect_to batch_student_path(@batch, @student),notice: "Evaluation added"
+          else
+            redirect_to batch_student_path(@batch, @student), notice: 'No evaluation added'
+          end
+    elsif params[:submitformname] == 'Save and next student'
+          @evaluation = @student.evaluations.build(evaluation_params)
+          #if !@student.evaluation_exists(@evaluation.evaluation_date)
+           if @evaluation.save
+           redirect_to "/batches/#{@batch.id}/students/#{@next_student.id}"
+          else
+            redirect_to batch_student_path(@batch, @student), notice: 'No evaluation added'
+          end
     end
-  end
-
-def create_and_next
-  @next_student = @batch.next_student(@student)
-  @evaluation = @student.evaluations.build(evaluation_params)
-  if @evaluation.save
-  redirect_to "/batches/#{batch.id}/students/#{@next_student.id}"
- else
-   redirect_to batch_student_path(@batch, @student), notice: 'No evaluation added'
- end
-
 end
+
+
+#def create_and_next
+#  @next_student = @batch.next_student(@student)
+#  @evaluation = @student.evaluations.build(evaluation_params)
+#  if @evaluation.save
+#  redirect_to "/batches/#{batch.id}/students/#{@next_student.id}"
+ #else
+#   redirect_to batch_student_path(@batch, @student), notice: 'No evaluation added'
+# end
+
+#end
   private
 
   #def evaluation_exists
