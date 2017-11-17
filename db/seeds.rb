@@ -26,16 +26,26 @@ batch3 = Batch.create(number: 3,
 
 #class to test evaluations on
 
-student1 = Student.create!({ name: Faker::HarryPotter.character, batch: batch1, evaluations: [] })
+student1 = Student.create!({name: Faker::HarryPotter.character, batch: batch1, evaluations: []})
+ Photo.create(remote_image_url: "http://res.cloudinary.com/du3yzngfr/image/upload/v1508429094/vnud6lsbqpo8qxz4fgjb.jpg", student: student1)
 student2 = Student.create!({ name: Faker::HarryPotter.character, batch: batch1, evaluations: [] })
+Photo.create(remote_image_url: "http://res.cloudinary.com/du3yzngfr/image/upload/v1508429094/vnud6lsbqpo8qxz4fgjb.jpg", student: student2)
 student3 = Student.create!({ name: Faker::HarryPotter.character, batch: batch1, evaluations: [] })
+Photo.create(remote_image_url: "http://res.cloudinary.com/du3yzngfr/image/upload/v1508429094/vnud6lsbqpo8qxz4fgjb.jpg", student: student3)
 student4 = Student.create!({ name: Faker::HarryPotter.character, batch: batch1, evaluations: [] })
+Photo.create(remote_image_url: "http://res.cloudinary.com/du3yzngfr/image/upload/v1508429094/vnud6lsbqpo8qxz4fgjb.jpg", student: student4)
 student5 = Student.create!({ name: Faker::HarryPotter.character, batch: batch1, evaluations: [] })
+Photo.create(remote_image_url: "http://res.cloudinary.com/du3yzngfr/image/upload/v1508429094/vnud6lsbqpo8qxz4fgjb.jpg", student: student5)
 student6 = Student.create!({ name: Faker::HarryPotter.character, batch: batch1, evaluations: [] })
+Photo.create(remote_image_url: "http://res.cloudinary.com/du3yzngfr/image/upload/v1508429094/vnud6lsbqpo8qxz4fgjb.jpg", student: student6)
 student7 = Student.create!({ name: Faker::HarryPotter.character, batch: batch1, evaluations: [] })
+Photo.create(remote_image_url: "http://res.cloudinary.com/du3yzngfr/image/upload/v1508429094/vnud6lsbqpo8qxz4fgjb.jpg", student: student7)
 student8 = Student.create!({ name: Faker::HarryPotter.character, batch: batch1, evaluations: [] })
+Photo.create(remote_image_url: "http://res.cloudinary.com/du3yzngfr/image/upload/v1508429094/vnud6lsbqpo8qxz4fgjb.jpg", student: student8)
 student9 = Student.create!({ name: Faker::HarryPotter.character, batch: batch1, evaluations: [] })
+Photo.create(remote_image_url: "http://res.cloudinary.com/du3yzngfr/image/upload/v1508429094/vnud6lsbqpo8qxz4fgjb.jpg", student: student9)
 student10 = Student.create!({ name: Faker::HarryPotter.character, batch: batch1, evaluations: [] })
+Photo.create(remote_image_url: "http://res.cloudinary.com/du3yzngfr/image/upload/v1508429094/vnud6lsbqpo8qxz4fgjb.jpg", student: student10)
 
 red_evaluation_student1= Evaluation.create!({
   evaluation_date: Date.parse("2017-11-14"),
@@ -99,6 +109,8 @@ red_evaluation_student10= Evaluation.create!({
     student: student10
     })
 
+    #end of seeds for testing evaluations
+
  10.times do |i|
     class2_student = Student.create!({
       name: Faker::LordOfTheRings.character,
@@ -117,6 +129,3 @@ red_evaluation_student10= Evaluation.create!({
        })
      photo3 = Photo.create(remote_image_url: "http://res.cloudinary.com/du3yzngfr/image/upload/v1510909979/jynx_hnborm.png", student: class3_student)
    end
-
-
-   photo1 = Photo.create(remote_image_url: "http://res.cloudinary.com/du3yzngfr/image/upload/v1508429094/vnud6lsbqpo8qxz4fgjb.jpg", student: student1)
