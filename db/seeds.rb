@@ -99,31 +99,15 @@ red_evaluation_student10= Evaluation.create!({
     student: student10
     })
 
-
-
-#green_evaluation_yesterday= Evaluation.create!({
-#                evaluation_date: Date.parse("2017-11-13"),
-#                color: "green"
-#                })
-
-#red_evaluation_yesterday= Evaluation.create!({
-#    evaluation_date: Date.parse("2017-11-13"),
-#    color: "red"
-#    })
-
-#yellow_evaluation_yesterday= Evaluation.create!({
-#        evaluation_date: Date.parse("2017-11-13"),
-#        color: "yellow"
-#        })
-
  10.times do |i|
     class2_student = Student.create!({
       name: Faker::LordOfTheRings.character,
       batch: batch2,
       evaluations:[],
       })
-    photo2 = Photo.create(remote_image_url: "http://res.cloudinary.com/du3yzngfr/image/upload/v1508429095/yjrtzit5oii8jlhjh4wq.jpg", student: class2_student)
+    photo2 = Photo.create(remote_image_url: "http://res.cloudinary.com/du3yzngfr/image/upload/v1508427883/elf_cz311r.png", student: class2_student)
   end
+
 
   10.times do |i|
      class3_student = Student.create!({
@@ -131,7 +115,7 @@ red_evaluation_student10= Evaluation.create!({
        batch: batch3,
        evaluations: [],
        })
-     photo3 = Photo.create(remote_image_url: "http://res.cloudinary.com/du3yzngfr/image/upload/v1508427883/elf_cz311r.png", student: class3_student)
+     photo3 = Photo.create(remote_image_url: "http://res.cloudinary.com/du3yzngfr/image/upload/v1510909979/jynx_hnborm.png", student: class3_student)
    end
 
 
