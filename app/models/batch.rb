@@ -7,11 +7,13 @@ class Batch < ApplicationRecord
   def student_to_ask_question
     @totalstudents = self.students.count
     random_student = nil
-    if @totalstudents != 0
-        color_selector = self.pick_semi_random_color
-        students_grouped = self.students_grouped_by_color(color_selector)
-
-        random_student = students_grouped.sample
+    if !self.students[0].evaluations.empty?
+      if @totalstudents != 0
+          color_selector = self.pick_semi_random_color
+          students_grouped = self.students_grouped_by_color(color_selector)
+            return self.student_to_ask_question if students_grouped.empty?
+          random_student = students_grouped.sample
+        end
       end
     return random_student
   end
@@ -29,7 +31,7 @@ class Batch < ApplicationRecord
   end
 
   def pick_semi_random_color
-    #50% chance to pick red = 3x , 33% chance to pick yellow = 2x, 17% chance to pick green = 1x
+    #50% chance to pick(red = 3x), 33% chance to pick (yellow = 2x), 17% chance to pick (green = 1x)
     chances_colors = ["red","red","red","yellow","yellow","green"]
     color_selector = chances_colors.sample
     return color_selector
@@ -62,7 +64,7 @@ def next_student(student)
   if index != amount_students
     index_next_student = index + 1
   else
-    index_next_student = index 
+    index_next_student = index
   end
     @next_student = students_in_class[index_next_student]
     return @next_student
