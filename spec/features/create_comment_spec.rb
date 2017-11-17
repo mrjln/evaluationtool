@@ -5,9 +5,8 @@ require 'rails_helper'
 
    let(:user) { create :user}
     let(:batch) {create :batch}
-    let(:student) {create :student, batch: batch}
-    let(:evaluation) {create :evaluation, student: student}
-    let(:evaluation) {create :evaluation, student: student}
+    let!(:student) {create :student, batch: batch}
+    let!(:evaluation) {create :evaluation, student: student}
 
   feature 'Create new evaluation for student', js: true do
     scenario 'add a new evaluation to student' do
