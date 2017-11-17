@@ -16,6 +16,7 @@
           <li><%= link_to "Log In", new_user_session_path, :style => 'color: #FFFFFF' %></li>
           <li><%= link_to "Sign Up", new_user_registration_path, :style => 'color: #FFFFFF' %></li>
         <% else %>
+          <li><%= link_to "Batches overview", "/batches", :style => 'color: #FFFFFF' %></li>
           <li class="dropdown">
             <a href="#" class="dropdown-toggle" data-toggle="dropdown" role="button" aria-haspopup="true" aria-expanded="false" style="color: #ffffff"><%= current_user.email %> <span class="caret" style="color: #ffffff"></span></a>
 

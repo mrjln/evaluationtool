@@ -20,6 +20,7 @@
 
 <div class="container-item-individual-student">
       <h4>Student Evaluation </h4>
+      <br>
 
 
       <%= render "evaluations/form_new_eval" %>
@@ -29,7 +30,7 @@
       <a href="/batches/<%=@batch.id%>"><button class="btn-primary">Back to Class <%=@batch.number %> </button></a>
       <% else %>
       <a href="/batches/<%=@batch.id%>/students/<%=@next_student.id %>"><button class="btn-primary"> Next Student </button></a>
-      
+
       <% end %>
 
 
