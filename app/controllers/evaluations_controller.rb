@@ -28,7 +28,16 @@ before_action :set_student
     end
   end
 
+def create_and_next
+  @next_student = @batch.next_student(@student)
+  @evaluation = @student.evaluations.build(evaluation_params)
+  if @evaluation.save
+  redirect_to "/batches/#{batch.id}/students/#{@next_student.id}"
+ else
+   redirect_to batch_student_path(@batch, @student), notice: 'No evaluation added'
+ end
 
+end
   private
 
   #def evaluation_exists
