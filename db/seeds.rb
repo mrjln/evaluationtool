@@ -1,4 +1,5 @@
 Photo.destroy_all
+Comment.destroy_all
 Evaluation.destroy_all
 Student.destroy_all
 Batch.destroy_all

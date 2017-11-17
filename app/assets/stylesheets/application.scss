@@ -82,6 +82,10 @@ a {
   width: 100%;
   flex-wrap: wrap;
   justify-content: flex-start;
+  flex-direction: row;
+  margin:auto;
+  align-content:center;
+  margin: 0em 5em 0em 5em;
 }
 
 .container-item-students {
@@ -167,10 +171,16 @@ input, button, select, textarea {
 
 .selected_student {
   border: 5px solid red;
-  margin: 2em;
+  margin: 2px;
   padding: 2em;
-  width: 30em;
+  width: 50%;
   height: 12em;
-  align-self:center;
+  align-self: center;
   overflow: hidden;
+  display: flex;
+  justify-content: space-around;
+}
+
+.selected_student-content {
+text-align: center;
 }

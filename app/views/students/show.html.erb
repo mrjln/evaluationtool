@@ -11,7 +11,7 @@
 
       <h2> <%= @student.name %></h2>
       <p> most recent evaluation: <%=@most_recent_evaluation_date%></p>
-      <p> status: <div id="<%= @studentcolor%>" class="eval <%= @studentcolor%>"> </div> </p>
+      <p> status: <div id="<%=@studentcolor%>" class="eval <%= @studentcolor%>"> </div> </p>
 
       <%= render "comments/all_comments" if !@evaluations.empty? %>
       <%= render "comments/form_new_comment" if !@evaluations.empty? %>
@@ -31,7 +31,7 @@
       <a href="/batches/<%=@batch.id%>/students/<%=@next_student.id %>"><button class="btn-primary"> Next Student </button></a>
       <% end %>
 
-    
+
 
 </div>
 

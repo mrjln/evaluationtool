@@ -1,8 +1,10 @@
-
+    <div class= "selected_student-content">
+    <div class= "eval <%=@selected_student.evaluations.last.color%>"></div>
     <h1><%= @selected_student.name %></h1>
+  </div>
+    <div class= "selected_student-content">
     <% @selected_student.photos.each do |photo| %>
     <%= image_tag photo.image.thumbnail %>
     <% end %>
-
-    <div class= "eval <%=@selected_student.evaluations.last.color%>">
-    </div>
+  </div>
+  </div>
