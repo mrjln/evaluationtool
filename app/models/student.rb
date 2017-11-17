@@ -64,7 +64,7 @@ class Student < ApplicationRecord
   @student_evaluations = self.evaluations
 
     if @student_evaluations.empty?
-       @studentcolor = "no color yet"
+       @studentcolor = "purple"
      else
        @studentcolor = @student.most_recent_evaluation.color
     end

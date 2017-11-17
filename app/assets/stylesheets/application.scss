@@ -102,6 +102,7 @@ footer {
   margin: 0.5em;
   overflow: hidden;
   padding: 2em;
+  box-shadow: 7px 6px 5px 1px #542b2b;
 
 }
 .container-content-students {
@@ -115,6 +116,7 @@ footer {
   width: 100%;
   flex-wrap: wrap;
   overflow: hidden;
+  box-shadow: 7px 6px 5px 1px #542b2b;
 
 }
 .container-item-individual-student {
@@ -185,5 +187,8 @@ input, button, select, textarea {
 }
 
 .selected_student-content {
-text-align: center;
+  text-align: center;
+  width: 14em;
+  overflow: hidden;
+  position: sticky;
 }

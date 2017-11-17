@@ -21,9 +21,7 @@ class BatchesController < ApplicationController
   def create
     @batch = Batch.new(batch_params)
     @batch.get_start_end_date
-
     if @batch.save
-
           redirect_to "/batches", notice: 'Batch added'
       else
         redirect_to "/batches", notice: 'Somethin went wrong'
