@@ -8,13 +8,14 @@
 
 <div class="selected_student_container">
   <div class="selected_student">
-  <a href="/batches/<%=@batch.id%>"><button class="btn-primary">Ask a question</button></a>
+  <a href="/batches/<%=@batch.id%>"><button class="btn-primary" name="askaquestion">Ask a question</button></a>
+
   </div>
   <div class="selected_student">
       <% if !@selected_student.nil? %>
       <%= render 'batches/selected_student' %>
       <% else %>
-      <h4> Color is not in the batch </h4>
+      <h4> -- </h4>
       <%end%>
   </div>
 </div>
