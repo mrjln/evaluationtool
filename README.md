@@ -13,6 +13,7 @@ green students: 17% chance of getting selected
 
 Overall goal: more attention for students that need extra some extra help with learning.  
 
+
 ## Database Structure
 
 1. Batches
@@ -43,3 +44,20 @@ Overall goal: more attention for students that need extra some extra help with l
 
 6. Users  
  see gem: device ^4.2 https://github.com/plataformatec/devise
+
+## Images
+Using Cloudinary and Carrierwave.
+* [CarrierWave](https://github.com/carrierwaveuploader/carrierwave)
+* [Cloudinary](http://cloudinary.com/documentation/rails_integration#getting_started_guide)
+
+## Running Locally
+
+Make sure you have [Ruby](https://www.ruby-lang.org/en/) and [Bundler](http://bundler.io/) installed.
+
+```bash
+git clone git@github.com:Codaisseur/world-of-cats-news.git
+cd world-of-cats-news
+bundle install
+rake db:create db:migrate db:seed
+rails server
+```
