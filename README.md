@@ -14,9 +14,31 @@ Overall goal: more attention for students that need extra some extra help with l
 
 ## Database Structure
 
-1. NewsItem
+1. Batches
+  * number:integer
+  * starts_at:date
+  * ends_at:date
+  * has_many :students
 
-  * title:string
-  * sub_header:text
+2. Students
+  * name:string
+  * belongs_to:batch
+  * has_many: photos
+
+3. Evaluation
+  * color:string
+  * evaluation_date:date
+  * belongs_to :student
+  * has many :comments
+
+4. Comments
   * content:text
+  * belongs_to :user
+  * belongs_to :evaluation
+
+5. Photos
   * image:string
+  * belongs_to : student
+
+6. Users  
+ see gem: device ^4.2 https://github.com/plataformatec/devise
