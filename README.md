@@ -55,9 +55,14 @@ Using Cloudinary and Carrierwave.
 Make sure you have [Ruby](https://www.ruby-lang.org/en/) and [Bundler](http://bundler.io/) installed.
 
 ```bash
-git clone git@github.com:Codaisseur/world-of-cats-news.git
-cd world-of-cats-news
+git clone [url]
+cd evaluationtool
 bundle install
 rake db:create db:migrate db:seed
 rails server
 ```
+
+## Testsuite
+
+* [RSpec](http://rspec.info/)
+* [Capybara](https://github.com/teamcapybara/capybara)
