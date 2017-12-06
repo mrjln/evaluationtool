@@ -7,14 +7,13 @@ class Batch < ApplicationRecord
   def student_to_ask_question
     @totalstudents = self.students.count
     random_student = nil
-    if !self.students[0].evaluations.empty?
-      if @totalstudents != 0
+    all_evaluations = self.all_evaluations
+      if @totalstudents != 0 || all_evaluations.count != 0
           color_selector = self.pick_semi_random_color
           students_grouped = self.students_grouped_by_color(color_selector)
-            return self.student_to_ask_question if students_grouped.empty?
+            #return self.student_to_ask_question if students_grouped.empty?
           random_student = students_grouped.sample
         end
-      end
     return random_student
   end
 
@@ -35,6 +34,14 @@ class Batch < ApplicationRecord
     chances_colors = ["red","red","red","yellow","yellow","green"]
     color_selector = chances_colors.sample
     return color_selector
+  end
+
+  def all_evaluations
+    @all_evaluations = []
+    self.students.each do |student|
+       @all_evaluations << student.evaluations if !student.evaluations.empty?
+    end
+    return @all_evaluations
   end
 
 
