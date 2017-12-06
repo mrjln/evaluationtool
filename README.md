@@ -1,6 +1,7 @@
 # README
+Evaluation Tool for Teachers to evaluate students
 
-##Evaluation Tool for Teachers to evaluate students
+### more information
 This tool enables teacher to provide an evaluation for students every day: red, yellow or green.
 Teacher can leave a comment on every evaluation.
 
